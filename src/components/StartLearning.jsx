@@ -18,7 +18,7 @@ const StartLearning = () => {
             <Image src="/assets/images/learning.png" alt="Mulai Perjalanan Belajar" width={416} height={456} className="object-contain" />
           </Zoom>
         </div>
-        <Zoom>
+        <Zoom triggerOnce>
           <div className="flex-1 pl-12" style={{ margin: "46px 0" }}>
             <p className="text-3xl font-semibold text-[#2F2F2F] leading-relaxed mb-4">
               Tingkatkan kualitas hidup dan <br /> keterampilan Anda hari ini!
