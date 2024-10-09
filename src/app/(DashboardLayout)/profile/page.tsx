@@ -12,9 +12,9 @@ const Profile = () => {
           <Grid item xs={12} sm={6} md={8}>
             <UserProfile />
           </Grid>
-          <Grid item xs={12} sm={6} md={4}>
+          {/* <Grid item xs={12} sm={6} md={4}>
             <UserForums />
-          </Grid>
+          </Grid> */}
         </Grid>
       </Grid>
     </Grid>

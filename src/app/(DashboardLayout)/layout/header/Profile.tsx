@@ -9,6 +9,7 @@ import {
   ListItemIcon,
   ListItemText,
   ListItemButton,
+  Stack,
 } from "@mui/material";
 
 import { IconUser } from "@tabler/icons-react";
@@ -38,10 +39,12 @@ const Profile = () => {
     <>
       {session?.user ?
         <Box mt={1} py={1} px={2}>
-          <LogoutButton />
-          <Link href='/'>
-            <Image src={userImage} alt='Profile' width={37} height={37} className='rounded-full' />
-          </Link>
+          <Stack direction='row' gap={1}>
+            <LogoutButton />
+            <Link href='/'>
+              <Image src={userImage} alt='Profile' width={37} height={37} style={{ borderRadius: '50%' }} />
+            </Link>
+          </Stack>
           {/* <IconButton
             size="large"
             aria-label="show 11 new notifications"

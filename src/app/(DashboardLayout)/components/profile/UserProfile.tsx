@@ -9,6 +9,7 @@ import { useMutation, useQuery } from 'react-query'
 import { useFormik } from 'formik'
 import * as Yup from 'yup'
 import SnackBarSuccess from '../snackbar/SnackBarSuccess'
+import { useSession } from 'next-auth/react'
 
 const validationSchema = Yup.object({
   name: Yup.string().required('Nama tidak boleh kosong'),
@@ -16,7 +17,10 @@ const validationSchema = Yup.object({
 })
 
 const UserProfile = () => {
+  const { data: session } = useSession()
   const [openEditUser, setOpenEditUser] = useState(false)
+
+  console.log(session?.user)
 
   const formikUser = useFormik({
     initialValues: {
