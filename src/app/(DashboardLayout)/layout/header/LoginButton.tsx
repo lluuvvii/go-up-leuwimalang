@@ -1,19 +1,37 @@
+'use client'
+
 import { Button } from '@mui/material'
 import Link from 'next/link'
-import React from 'react'
+import React, { useEffect, useState } from 'react'
+
+import { signIn, getProviders, LiteralUnion, ClientSafeProvider } from 'next-auth/react'
+import { BuiltInProviderType } from 'next-auth/providers';
 
 const LoginButton = () => {
+  const [providers, setProviders] = useState<Record<LiteralUnion<BuiltInProviderType, string>, ClientSafeProvider> | null>(null);
+
+  useEffect(() => {
+    const setUpProviders = async () => {
+      const response = await getProviders()
+
+      setProviders(response)
+    }
+
+    setUpProviders()
+  }, [])
+
+
   return (
-    <Button
-      href="/authentication/login"
-      variant="outlined"
-      color="primary"
-      component={Link}
-      fullWidth
-      onClick={() => localStorage.removeItem('token')}
-    >
-      Masuk
-    </Button>
+    <>
+      <Button
+        variant="outlined"
+        color="primary"
+        fullWidth
+        onClick={() => signIn("google")}
+      >
+        Masuk
+      </Button>
+    </>
   )
 }
 

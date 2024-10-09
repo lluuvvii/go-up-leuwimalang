@@ -14,27 +14,35 @@ import {
 import { IconUser } from "@tabler/icons-react";
 import LogoutButton from "./LogoutButton";
 import LoginButton from "./LoginButton";
+import { useSession } from "next-auth/react";
+import Image from "next/image";
 
 const Profile = () => {
-  const [anchorEl2, setAnchorEl2] = useState(null);
-  const [token, setToken] = useState<any>(null)
-  const handleClick2 = (event: any) => {
-    setAnchorEl2(event.currentTarget);
-  };
-  const handleClose2 = () => {
-    setAnchorEl2(null);
-  };
+  const { data: session } = useSession()
+  const userImage: string | undefined = session?.user?.image as string
+  // const [anchorEl2, setAnchorEl2] = useState(null);
+  // const [token, setToken] = useState<any>(null)
+  // const handleClick2 = (event: any) => {
+  //   setAnchorEl2(event.currentTarget);
+  // };
+  // const handleClose2 = () => {
+  //   setAnchorEl2(null);
+  // };
 
-  useEffect(() => {
-    setToken(localStorage?.getItem('token'))
-  }, [])
+  // useEffect(() => {
+  //   setToken(localStorage?.getItem('token'))
+  // }, [])
 
 
   return (
     <>
-      {token ?
-        <Box>
-          <IconButton
+      {session?.user ?
+        <Box mt={1} py={1} px={2}>
+          <LogoutButton />
+          <Link href='/'>
+            <Image src={userImage} alt='Profile' width={37} height={37} className='rounded-full' />
+          </Link>
+          {/* <IconButton
             size="large"
             aria-label="show 11 new notifications"
             color="inherit"
@@ -47,13 +55,13 @@ const Profile = () => {
             }}
             onClick={handleClick2}
           >
-            {/* <Avatar src="/images/profile/user-1.jpg" alt="image" sx={{ width: 35, height: 35, }} /> */}
+            <Avatar src="/images/profile/user-1.jpg" alt="image" sx={{ width: 35, height: 35, }} />
             <Avatar sx={{ width: 35, height: 35 }} src="https://source.boringavatars.com/beam" alt="user-profile" />
-          </IconButton>
+          </IconButton> */}
           {/* ------------------------------------------- */}
           {/* Message Dropdown */}
           {/* ------------------------------------------- */}
-          <Menu
+          {/* <Menu
             id="msgs-menu"
             anchorEl={anchorEl2}
             keepMounted
@@ -78,7 +86,7 @@ const Profile = () => {
             <Box mt={1} py={1} px={2}>
               <LogoutButton />
             </Box>
-          </Menu>
+          </Menu> */}
         </Box>
         :
         <Box mt={1} py={1} px={2}>

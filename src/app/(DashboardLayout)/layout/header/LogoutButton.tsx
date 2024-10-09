@@ -1,16 +1,20 @@
+'use client'
+
 import { Button } from '@mui/material'
 import Link from 'next/link'
 import React from 'react'
 
+import { signOut } from 'next-auth/react'
+
 const LogoutButton = () => {
   return (
     <Button
-      href="/authentication/login"
+      href="/"
       variant="outlined"
       color="primary"
       component={Link}
       fullWidth
-      onClick={() => localStorage.removeItem('token')}
+      onClick={() => signOut()}
     >
       Keluar
     </Button>
