@@ -1,8 +1,10 @@
 "use client";
 import { useState } from "react";
 import Image from "next/image";
+import { useSession, signIn, signOut } from "next-auth/react";
 
 const Navbar = () => {
+  const { data: session } = useSession()
   const [activeLink, setActiveLink] = useState("home");
 
   // Set menu link aktif saat di-scroll
@@ -44,8 +46,12 @@ const Navbar = () => {
 
       {/* Button Masuk dan Daftar */}
       <div className="flex items-center space-x-3">
-        <button className="px-4 py-2 text-white bg-[#629A1A] rounded-lg transition duration-300 hover:bg-white hover:text-[#629A1A] border">Masuk</button>
-        <button className="px-4 py-2 text-[#629A1A] border border-[#629A1A] rounded-lg transition duration-300 hover:bg-[#629A1A] hover:text-white">Daftar</button>
+        {session?.user ?
+          <button className="px-4 py-2 text-white bg-[#629A1A] rounded-lg transition duration-300 hover:bg-white hover:text-[#629A1A] border" onClick={() => signOut()}>Keluar</button>
+          :
+          <button className="px-4 py-2 text-white bg-[#629A1A] rounded-lg transition duration-300 hover:bg-white hover:text-[#629A1A] border" onClick={() => signIn("google")}>Masuk</button>
+        }
+        {/* <button className="px-4 py-2 text-[#629A1A] border border-[#629A1A] rounded-lg transition duration-300 hover:bg-[#629A1A] hover:text-white">Daftar</button> */}
       </div>
     </nav>
   );
