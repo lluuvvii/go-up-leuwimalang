@@ -1,9 +1,24 @@
 "use client";
-import { useState } from "react";
+
+import { useEffect, useState } from "react";
 import Image from "next/image";
 
+import { signIn, signOut, useSession, getProviders } from 'next-auth/react'
+
 const Navbar = () => {
+  const { data: session } = useSession()
+  const [providers, setProviders] = useState(null)
   const [activeLink, setActiveLink] = useState("home");
+
+  useEffect(() => {
+    const setUpProviders = async () => {
+      const response = await getProviders()
+
+      setProviders(response)
+    }
+
+    setUpProviders()
+  }, [])
 
   // Set menu link aktif saat di-scroll
   const handleScroll = (id) => {
@@ -42,10 +57,17 @@ const Navbar = () => {
         </a>
       </div>
 
-      {/* Button Masuk dan Daftar */}
+      {/* Button Masuk dan Logout*/}
       <div className="flex items-center space-x-3">
-        <button className="px-4 py-2 text-white bg-[#629A1A] rounded-lg transition duration-300 hover:bg-white hover:text-[#629A1A] border">Masuk</button>
-        <button className="px-4 py-2 text-[#629A1A] border border-[#629A1A] rounded-lg transition duration-300 hover:bg-[#629A1A] hover:text-white">Daftar</button>
+        {session?.user ?
+          <button className="px-4 py-2 text-[#629A1A] border border-[#629A1A] rounded-lg transition duration-300 hover:bg-[#629A1A] hover:text-white" onClick={signOut}>Keluar</button>
+          :
+          <>
+            {providers &&
+              Object.values(providers).map((provider) => (
+                <button key={provider.name} className="px-4 py-2 text-white bg-[#629A1A] rounded-lg transition duration-300 hover:bg-white hover:text-[#629A1A] border" onClick={() => signIn(provider.id)}>Masuk</button>
+              ))}
+          </>}
       </div>
     </nav>
   );
