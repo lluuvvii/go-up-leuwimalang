@@ -7,4 +7,6 @@ const CourseStatisticSchema = new mongoose.Schema({
   score: { type: Number, default: 0 },
 });
 
-export default mongoose.models.CourseStatistic || mongoose.model('CourseStatistic', CourseStatisticSchema);
+const CourseStatistic = mongoose.models.CourseStatistic || mongoose.model('CourseStatistic', CourseStatisticSchema);
+
+export default CourseStatistic;
