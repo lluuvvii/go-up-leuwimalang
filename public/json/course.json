@@ -1,0 +1,56 @@
+{
+  "peduliBersih": [
+    {
+      "id": "kebersihan-lingkungan",
+      "title": "Pengenalan Kebersihan Lingkungan",
+      "description": "Materi ini membahas tentang pentingnya kebersihan lingkungan dan cara-cara menjaga kebersihan."
+    },
+    {
+      "id": "pengelolaan-sampah",
+      "title": "Pengelolaan Sampah yang Benar",
+      "description": "Menjelaskan cara-cara pengelolaan sampah yang efektif untuk mengurangi dampak lingkungan."
+    },
+    {
+      "id": "dampak-polusi",
+      "title": "Dampak Polusi dan Cara Menguranginya",
+      "description": "Materi mengenai dampak polusi terhadap lingkungan dan langkah-langkah yang bisa diambil untuk menguranginya."
+    },
+    {
+      "id": "peran-edukasi",
+      "title": "Peran Edukasi dalam Meningkatkan Kesadaran Lingkungan",
+      "description": "Menggambarkan pentingnya edukasi untuk meningkatkan kesadaran masyarakat terhadap isu lingkungan."
+    },
+    {
+      "id": "tugas-akhir-lingkungan",
+      "title": "Tugas Akhir - Aksi Nyata untuk Lingkungan Bersih",
+      "description": "Tugas akhir yang mengajak peserta untuk berkontribusi dalam menjaga lingkungan bersih melalui aksi nyata."
+    }
+  ],
+  "digitalReady": [
+    {
+      "id": "literasi-digital",
+      "title": "Pengenalan Literasi Digital",
+      "description": "Materi yang memberikan pemahaman dasar mengenai literasi digital dan pentingnya dalam era digital."
+    },
+    {
+      "id": "penggunaan-teknologi",
+      "title": "Penggunaan Teknologi Secara Efektif",
+      "description": "Menjelaskan cara menggunakan teknologi secara efektif untuk meningkatkan produktivitas."
+    },
+    {
+      "id": "keamanan-privasi",
+      "title": "Keamanan dan Privasi di Dunia Digital",
+      "description": "Materi yang mengupas aspek keamanan dan privasi saat menggunakan teknologi digital."
+    },
+    {
+      "id": "pemikiran-kritis",
+      "title": "Pemikiran Kritis dalam Mengakses Informasi Daring",
+      "description": "Mendorong peserta untuk mengembangkan pemikiran kritis dalam mengevaluasi informasi di internet."
+    },
+    {
+      "id": "tugas-akhir-digital",
+      "title": "Tugas Akhir - Penerapan Literasi Digital",
+      "description": "Tugas akhir yang menantang peserta untuk menerapkan literasi digital dalam kehidupan sehari-hari."
+    }
+  ]
+}

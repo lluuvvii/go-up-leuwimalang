@@ -1,0 +1,98 @@
+[
+  {
+    "id": 1,
+    "title": "Kentang Bumbu Rica",
+    "description": "Kentang bumbu rica adalah kentang goreng dengan bumbu rica pedas",
+    "price": 1500,
+    "imageUrl": "/assets/images/bumbu-rica.png",
+    "storeAddress": "Kantin Bu Rini, Jl. Setia No. 2, Desa Leuwimalang"
+  },
+  {
+    "id": 2,
+    "title": "Tas Anyaman",
+    "description": "Kerajinan tangan dari bahan alami yang unik dan ramah lingkungan.",
+    "price": 1500,
+    "imageUrl": "/assets/images/tas-anyaman.png",
+    "storeAddress": "Kantin Bu Rini, Jl. Setia No. 2, Desa Leuwimalang"
+  },
+  {
+    "id": 3,
+    "title": "Sambal Terasi",
+    "description": "Sambal terasi pedas khas Indonesia.",
+    "price": 800,
+    "imageUrl": "https://i.pinimg.com/564x/b8/7b/6a/b87b6aba66bb7944df9c00900fcae159.jpg",
+    "storeAddress": "Kantin Bu Rini, Jl. Setia No. 2, Desa Leuwimalang"
+  },
+  {
+    "id": 4,
+    "title": "Keripik Pisang",
+    "description": "Keripik pisang manis gurih untuk cemilan.",
+    "price": 1200,
+    "imageUrl": "https://i.pinimg.com/736x/94/8f/07/948f071fc8377123be3319f88c2798f7.jpg",
+    "storeAddress": "Kantin Bu Rini, Jl. Setia No. 2, Desa Leuwimalang"
+  },
+  {
+    "id": 5,
+    "title": "Bolu Kukus",
+    "description": "Bolu kukus lembut dengan berbagai rasa.",
+    "price": 1000,
+    "imageUrl": "https://i.pinimg.com/236x/d2/cf/f0/d2cff099266bdb3e9fe405664459e023.jpg",
+    "storeAddress": "Kantin Bu Rini, Jl. Setia No. 2, Desa Leuwimalang"
+  },
+  {
+    "id": 6,
+    "title": "Kaos Polos",
+    "description": "Kaos polos berbahan katun nyaman dipakai.",
+    "price": 2000,
+    "imageUrl": "https://i.pinimg.com/736x/ce/de/46/cede46ae01836b03e917713d1226752c.jpg",
+    "storeAddress": "Kantin Bu Rini, Jl. Setia No. 2, Desa Leuwimalang"
+  },
+  {
+    "id": 7,
+    "title": "Mug Custom",
+    "description": "Mug custom dengan desain pilihanmu.",
+    "price": 1500,
+    "imageUrl": "https://i.pinimg.com/236x/82/80/85/8280853f50100feaa5dee15e9fbbf766.jpg",
+    "storeAddress": "Kantin Bu Rini, Jl. Setia No. 2, Desa Leuwimalang"
+  },
+  {
+    "id": 8,
+    "title": "Jaket Hoodie",
+    "description": "Jaket hoodie hangat untuk cuaca dingin.",
+    "price": 2500,
+    "imageUrl": "https://i.pinimg.com/236x/0c/e0/d6/0ce0d6ae7d906428ebf007d3cc72943e.jpg",
+    "storeAddress": "Kantin Bu Rini, Jl. Setia No. 2, Desa Leuwimalang"
+  },
+  {
+    "id": 9,
+    "title": "Kopi Arabika",
+    "description": "Kopi arabika asli dengan rasa khas.",
+    "price": 1800,
+    "imageUrl": "https://i.pinimg.com/236x/31/d7/d9/31d7d99b60882333127f525bfb02bdfe.jpg",
+    "storeAddress": "Kantin Bu Rini, Jl. Setia No. 2, Desa Leuwimalang"
+  },
+  {
+    "id": 10,
+    "title": "Teh Herbal",
+    "description": "Teh herbal menyehatkan dengan aroma wangi.",
+    "price": 1300,
+    "imageUrl": "https://i.pinimg.com/736x/f3/c1/47/f3c14772508512e83c467f11432df8d5.jpg",
+    "storeAddress": "Kantin Bu Rini, Jl. Setia No. 2, Desa Leuwimalang"
+  },
+  {
+    "id": 11,
+    "title": "Masker Kain",
+    "description": "Masker kain ramah lingkungan.",
+    "price": 500,
+    "imageUrl": "https://i.pinimg.com/236x/24/c5/61/24c561fac61c83447432e232dae740d5.jpg",
+    "storeAddress": "Kantin Bu Rini, Jl. Setia No. 2, Desa Leuwimalang"
+  },
+  {
+    "id": 12,
+    "title": "Tempe",
+    "description": "Tempe goreng renyah dengan bumbu khas.",
+    "price": 900,
+    "imageUrl": "https://i.pinimg.com/736x/46/4a/bf/464abffe59a7e418b701bfc1c8a68adb.jpg",
+    "storeAddress": "Kantin Bu Rini, Jl. Setia No. 2, Desa Leuwimalang"
+  }
+]

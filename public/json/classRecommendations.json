@@ -1,0 +1,17 @@
+[
+  {
+    "title": "Pengenalan Jati Diri",
+    "description": "Kelas Pengenalan Jati Diri membantu Anda mengenal diri, minat, dan refleksi sederhana, agar lebih percaya diri dan memahami siapa Anda.",
+    "imageUrl": "assets/images/kelas1.png"
+  },
+  {
+    "title": "Desain Kreatif",
+    "description": "Kelas Desain Kreatif mengajak Anda menjelajahi warna, bentuk, dan imajinasi dalam menciptakan karya. Anda akan belajar merancang desain yang menarik dan unik.",
+    "imageUrl": "assets/images/kelas1.png"
+  },
+  {
+    "title": "Pemberdayaan Diri",
+    "description": "Kelas Pemberdayaan Diri mengajarkan Anda tentang pentingnya percaya diri, komunikasi, dan pengembangan diri melalui berbagai aktivitas dan latihan individu.",
+    "imageUrl": "assets/images/kelas1.png"
+  }
+]

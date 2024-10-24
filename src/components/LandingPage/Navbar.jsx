@@ -32,7 +32,7 @@ const Navbar = () => {
   return (
     <nav className="custom-container flex items-center justify-between p-4 bg-white shadow sticky top-0 z-50">
       <div className="flex items-center space-x-20">
-        <Image src="/assets/images/logo-2.jpg" alt="Logo" width={57} height={57} className="rounded-full" />
+        <Image src="/assets/images/logo-navbar.png" alt="Logo" width={57} height={57} className="rounded-full" />
         <div className="flex items-center border border-gray-300 rounded-full overflow-hidden w-[450px]">
           <button className="px-4">
             <Image src="/assets/icons/ic-search.svg" alt="Search Icon" width={20} height={20} />
