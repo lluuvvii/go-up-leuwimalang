@@ -170,6 +170,7 @@ const Sidebar = ({ onSelectMenu }) => {
         </ListItem>
         <Collapse in={openDigitalReady} timeout="auto" unmountOnExit>
           <List component="div" disablePadding>
+            {renderDropdownItem("digital-ready", "0. Pengenalan Digital Ready")}
             {renderDropdownItem("literasi-digital", "1. Pengenalan Literasi Digital")}
             {renderDropdownItem("penggunaan-teknologi", "2. Penggunaan Teknologi Secara Efektif")}
             {renderDropdownItem("keamanan-privasi", "3. Keamanan dan Privasi di Dunia Digital")}

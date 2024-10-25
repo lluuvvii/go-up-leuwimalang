@@ -15,6 +15,7 @@ import PeranEdukasiPB from "./Class/PeduliBersih/PeranEdukasi";
 import TugasAkhirPB from "./Class/PeduliBersih/TugasAkhir";
 
 // Mengimpor konten dari Digital Ready
+import DigitalReadyContentDR from "./Class/DigitalReady/DigitalReady";
 import LiterasiDigitalContentDR from "./Class/DigitalReady/LiterasiDigital";
 import PenggunaanTeknologiDR from "./Class/DigitalReady/PenggunaanTeknologi";
 import KeamananPrivasiDR from "./Class/DigitalReady/KeamananPrivasi";
@@ -44,6 +45,10 @@ const MainLayout = () => {
         return <PeranEdukasiPB />;
       case "tugas-akhir-lingkungan":
         return <TugasAkhirPB />;
+      
+      // Digital Ready
+      case "digital-ready":
+        return <DigitalReadyContentDR />;
       case "literasi-digital":
         return <LiterasiDigitalContentDR />;
       case "penggunaan-teknologi":
