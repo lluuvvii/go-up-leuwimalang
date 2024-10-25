@@ -1,13 +1,17 @@
 import React from "react";
-import { Typography, Avatar, Box } from "@mui/material";
+import { Typography, Avatar, Box, useMediaQuery } from "@mui/material";
 import { useSession } from "next-auth/react";
 
-const Navbar = ({ title, userName, profilePhoto }) => {
-  const { data: session } = useSession()
+const Navbar = ({ title }) => {
+  const { data: session } = useSession();
+  
+  const isMobile = useMediaQuery("(max-width:600px)");
+
   return (
     <div
       style={{
         display: "flex",
+        flexDirection: isMobile ? "column" : "row",
         justifyContent: "space-between",
         alignItems: "center",
         padding: "20px 40px",
@@ -16,15 +20,21 @@ const Navbar = ({ title, userName, profilePhoto }) => {
         marginBottom: "20px",
         color: "#1D1D1D",
         borderRadius: 18,
+        marginTop: isMobile ? "20px" : "0", 
       }}
     >
-      <Typography variant="h5" sx={{ fontWeight: 700 }}>
+      <Typography variant="h5" sx={{ fontWeight: 700, textAlign: isMobile ? "center" : "left" }}>
         {title}
       </Typography>
 
       {/* User profile section */}
-      <Box display="flex" alignItems="center">
-        <Typography variant="body1" sx={{ marginRight: "10px", fontWeight: 500 }}>
+      <Box
+        display="flex"
+        alignItems="center"
+        flexDirection={isMobile ? "column" : "row"}
+        marginTop={isMobile ? "10px" : "0"}
+      >
+        <Typography variant="body1" sx={{ marginRight: isMobile ? "0" : "10px", fontWeight: 500, textAlign: "center" }}>
           Hi, {session?.user.name}
         </Typography>
         <Avatar alt={session?.user.name} src={session?.user.image} />

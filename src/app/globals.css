@@ -24,9 +24,4 @@ body {
   .text-balance {
     text-wrap: balance;
   }
-
-  .custom-container {
-    padding-left: 80px;
-    padding-right: 80px;
-  }
 }

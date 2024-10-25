@@ -24,36 +24,35 @@ const Dashboard = () => {
   return (
     <div>
       <Grid container spacing={2}>
-        {/* Left Section (Progress and Watch Time) */}
-        <Grid item xs={6} md={4}>
+        <Grid item xs={12} md={4}>
           {/* Linear Progress */}
           <Card
             sx={{
               borderRadius: "18px",
-              padding: "50px",
+              padding: { xs: "20px", md: "45px" }, // Responsive padding
               backgroundColor: "#FDFAFA",
               boxShadow: "none",
               marginBottom: "20px",
             }}
           >
-            <Typography variant="h6" sx={{ fontWeight: 600, marginBottom: "35px" }}>
+            <Typography variant="h6" sx={{ fontWeight: 600, marginBottom: "20px", fontSize: { xs: "1.2rem", md: "1.5rem" } }}>
               Progress
             </Typography>
             <Box sx={{ display: "flex", flexDirection: "column", alignItems: "center" }}>
-              <Typography sx={{ marginBottom: 2, fontWeight: 600, fontSize: 48 }}>{progress}%</Typography>
+              <Typography sx={{ marginBottom: 2, fontWeight: 600, fontSize: { xs: "2rem", md: "48px" } }}>{progress}%</Typography>
               <Box
                 sx={{
                   width: "100%",
                   height: "10px",
-                  backgroundColor: "#E0E0E0", // Warna abu-abu untuk yang belum selesai
+                  backgroundColor: "#E0E0E0",
                   borderRadius: "5px",
                 }}
               >
                 <Box
                   sx={{
-                    width: `${progress}%`, // Ini akan menyesuaikan dengan nilai progress
+                    width: `${progress}%`,
                     height: "100%",
-                    backgroundColor: "#629A1A", // Warna hijau untuk progress
+                    backgroundColor: "#629A1A",
                     borderRadius: "5px",
                   }}
                 />
@@ -65,12 +64,12 @@ const Dashboard = () => {
           <Card
             sx={{
               borderRadius: "18px",
-              padding: "50px",
+              padding: { xs: "20px", md: "45px" },
               backgroundColor: "#FDFAFA",
               boxShadow: "none",
             }}
           >
-            <Typography variant="h6" sx={{ fontWeight: 600, marginBottom: "50px" }}>
+            <Typography variant="h6" sx={{ fontWeight: 600, marginBottom: "20px", fontSize: { xs: "1.2rem", md: "1.5rem" } }}>
               Watch Time
             </Typography>
             <Box
@@ -81,34 +80,30 @@ const Dashboard = () => {
                 alignItems: "center",
               }}
             >
-              {/* Background (abu-abu) */}
               <CircularProgress
                 variant="determinate"
                 value={100}
                 size={153}
                 thickness={3.1}
                 sx={{
-                  color: "#E0E0E0", // Warna abu-abu untuk bagian yang belum selesai
-                  position: "absolute", // Ini memastikan bahwa background ada di belakang
+                  color: "#E0E0E0",
+                  position: "absolute",
                 }}
               />
-
-              {/* Progress (hijau) */}
               <CircularProgress
                 variant="determinate"
                 value={watchTime}
                 size={153}
                 thickness={3.1}
                 sx={{
-                  color: "#629A1A", // Warna hijau untuk progress
-                  zIndex: 1, // Pastikan berada di atas
+                  color: "#629A1A",
+                  zIndex: 1,
                   "& .MuiCircularProgress-circle": {
                     strokeLinecap: "round",
                   },
                 }}
               />
-
-              <Typography sx={{ position: "absolute", fontWeight: 600, fontSize: 48 }}>{watchTime}%</Typography>
+              <Typography sx={{ position: "absolute", fontWeight: 600, fontSize: { xs: "2rem", md: "48px" } }}>{watchTime}%</Typography>
             </Box>
           </Card>
         </Grid>
@@ -118,7 +113,7 @@ const Dashboard = () => {
           <Card
             sx={{
               borderRadius: "18px",
-              padding: "40px",
+              padding: { xs: "20px", md: "40px" },
               backgroundColor: "#FDFAFA",
               boxShadow: "none",
             }}
@@ -131,7 +126,7 @@ const Dashboard = () => {
                 marginBottom: "25px",
               }}
             >
-              <Typography variant="h6" sx={{ fontWeight: 600 }}>
+              <Typography variant="h6" sx={{ fontWeight: 600, fontSize: { xs: "16px", md: "20px" } }}>
                 Rekomendasi Kelas
               </Typography>
               <Typography
@@ -140,19 +135,19 @@ const Dashboard = () => {
                   fontWeight: 600,
                   color: "#629A1A",
                   cursor: "pointer",
-                  display: "flex", // Flexbox untuk meratakan teks dan ikon
-                  alignItems: "center", // Menjaga ikon sejajar dengan teks secara vertikal
+                  display: "flex",
+                  alignItems: "center",
                 }}
               >
                 Lihat Lanjut
                 <Box
                   component="img"
-                  src="/assets/icons/ic-arrow.png" // Ganti dengan path ikon Anda
+                  src="/assets/icons/ic-arrow.png"
                   alt="Lihat Lanjut Icon"
                   sx={{
-                    width: "16px", // Atur ukuran ikon sesuai kebutuhan
+                    width: "16px",
                     height: "16px",
-                    marginLeft: "8px", // Jarak antara teks dan ikon
+                    marginLeft: "8px",
                   }}
                 />
               </Typography>
@@ -162,27 +157,28 @@ const Dashboard = () => {
             <Grid container spacing={2}>
               {classRecommendations.map((classItem, index) => (
                 <Grid item xs={12} key={index}>
-                  <Box
-                    component="a"
-                    href={`#dummy-link-${index}`} // Dummy link for now, you can replace it with actual URLs or dynamic IDs
-                    sx={{ textDecoration: "none" }} // Remove underline on link
-                  >
+                  <Box component="a" href={`#dummy-link-${index}`} sx={{ textDecoration: "none" }}>
                     <Card
                       sx={{
                         borderRadius: "18px",
                         display: "flex",
                         backgroundColor: "#FFFFFF",
-                        cursor: "pointer", // Make the card look clickable
+                        cursor: "pointer",
+                        height: { xs: "100px", md: "auto" }, // Responsif
                       }}
                     >
-                      {/* Gambar untuk setiap kelas */}
-                      <CardMedia component="img" sx={{ width: 170 }} image={classItem.imageUrl} alt={classItem.title} />
-                      <CardContent sx={{ padding: "10px", paddingLeft: "20px" }}>
+                      <CardMedia
+                        component="img"
+                        sx={{ width: 120 }} // Lebar gambar disesuaikan
+                        image={classItem.imageUrl}
+                        alt={classItem.title}
+                      />
+                      <CardContent sx={{ padding: "4px", paddingLeft: "10px" }}>
                         <Typography
                           variant="h6"
                           sx={{
                             fontWeight: 600,
-                            fontSize: "16px",
+                            fontSize: { xs: "12px", md: "16px" }, // Responsif
                             color: "#629A1A",
                           }}
                         >
@@ -193,13 +189,13 @@ const Dashboard = () => {
                           variant="body2"
                           sx={{
                             color: "#666",
-                            fontSize: "12px",
+                            fontSize: { xs: "8px", md: "12px" }, // Responsif
                             marginTop: "3px",
                           }}
                         >
                           {classItem.description}
                         </Typography>
-                        <Typography variant="h6" sx={{ color: "#FFAA00", marginTop: "4px" }}>
+                        <Typography variant="h6" sx={{ color: "#FFAA00", marginTop: "4px", fontSize: { xs: "14px", md: "16px" } }}>
                           ★★★★★
                         </Typography>
                       </CardContent>
@@ -216,13 +212,21 @@ const Dashboard = () => {
           <Card
             sx={{
               borderRadius: "18px", // Sama dengan bagian lainnya
-              padding: "40px",
+              padding: { xs: "20px", md: "40px" }, // Padding kecil untuk mobile
               backgroundColor: "#FDFAFA", // Warna latar belakang yang sama
               boxShadow: "none",
               marginBottom: "20px",
             }}
           >
-            <Typography variant="h6" sx={{ fontWeight: 600, marginBottom: "10px", color: "#000000" }}>
+            <Typography
+              variant="h6"
+              sx={{
+                fontWeight: 600,
+                marginBottom: "10px",
+                color: "#000000",
+                fontSize: { xs: "1.2rem", md: "1.5rem" }, // Ukuran font lebih kecil di mobile
+              }}
+            >
               Lanjut Belajar
             </Typography>
             <Grid container spacing={2}>
@@ -231,7 +235,7 @@ const Dashboard = () => {
                   <Card
                     sx={{
                       borderRadius: "18px",
-                      padding: "20px",
+                      padding: { xs: "10px", md: "20px" }, // Padding kecil untuk mobile
                       backgroundColor: "#629A1A",
                       display: "flex",
                       justifyContent: "space-between",
@@ -245,7 +249,7 @@ const Dashboard = () => {
                         <CircularProgress
                           variant="determinate"
                           value={100}
-                          size={121}
+                          size={80} // Ukuran untuk tampilan mobile
                           thickness={3.1}
                           sx={{
                             color: "#87A878",
@@ -257,7 +261,7 @@ const Dashboard = () => {
                         <CircularProgress
                           variant="determinate"
                           value={course.progress}
-                          size={121}
+                          size={80} // Ukuran untuk tampilan mobile
                           thickness={3.1}
                           sx={{
                             color: "#FFFFFF", // Warna putih untuk progress
@@ -273,13 +277,15 @@ const Dashboard = () => {
                             left: "50%",
                             transform: "translate(-50%, -50%)",
                             fontWeight: 600,
-                            fontSize: "40px",
+                            fontSize: { xs: "24px", md: "28px" }, // Ukuran font untuk tampilan mobile
                           }}
                         >
                           {course.progress}%
                         </Typography>
                       </Box>
-                      <Typography variant="h6">{course.title}</Typography>
+                      <Typography variant="h6" sx={{ fontSize: { xs: "0.8rem", md: "1.4rem" } }}>
+                        {course.title}
+                      </Typography>
                     </Box>
                     <Button
                       variant="contained"
@@ -288,6 +294,7 @@ const Dashboard = () => {
                         color: "#629A1A",
                         fontWeight: 600,
                         borderRadius: "10px",
+                        fontSize: { xs: "0.4rem", md: "1rem" }, // Ukuran font tombol lebih kecil di mobile
                       }}
                     >
                       Lanjutkan pembelajaran
@@ -305,6 +312,7 @@ const Dashboard = () => {
                   borderColor: "#629A1A",
                   fontWeight: 600,
                   borderRadius: "20px",
+                  fontSize: { xs: "0.8rem", md: "1rem" }, // Ukuran font tombol lebih kecil di mobile
                 }}
               >
                 Lihat lebih detail
