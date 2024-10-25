@@ -1,7 +1,9 @@
 import React from "react";
 import { Typography, Avatar, Box } from "@mui/material";
+import { useSession } from "next-auth/react";
 
 const Navbar = ({ title, userName, profilePhoto }) => {
+  const { data: session } = useSession()
   return (
     <div
       style={{
@@ -23,9 +25,9 @@ const Navbar = ({ title, userName, profilePhoto }) => {
       {/* User profile section */}
       <Box display="flex" alignItems="center">
         <Typography variant="body1" sx={{ marginRight: "10px", fontWeight: 500 }}>
-          Hi, {userName}
+          Hi, {session?.user.name}
         </Typography>
-        <Avatar alt={userName} src={profilePhoto} />
+        <Avatar alt={session?.user.name} src={session?.user.image} />
       </Box>
     </div>
   );
