@@ -15,6 +15,7 @@ import PeranEdukasiPB from "./Class/PeduliBersih/PeranEdukasi";
 import TugasAkhirPB from "./Class/PeduliBersih/TugasAkhir";
 
 // Mengimpor konten dari Digital Ready
+import DigitalReadyContentDR from "./Class/DigitalReady/DigitalReady";
 import LiterasiDigitalContentDR from "./Class/DigitalReady/LiterasiDigital";
 import PenggunaanTeknologiDR from "./Class/DigitalReady/PenggunaanTeknologi";
 import KeamananPrivasiDR from "./Class/DigitalReady/KeamananPrivasi";
@@ -22,9 +23,11 @@ import PemikiranKritisDR from "./Class/DigitalReady/PemikiranKritis";
 import TugasAkhirDR from "./Class/DigitalReady/TugasAkhir";
 
 import Navbar from "./Navbar";
+import { Box, CssBaseline } from "@mui/material";
 
 const MainLayout = () => {
   const [selectedMenu, setSelectedMenu] = useState("dashboard");
+  const [isSidebarOpen, setIsSidebarOpen] = useState(false);
 
   const renderContent = () => {
     switch (selectedMenu) {
@@ -42,6 +45,10 @@ const MainLayout = () => {
         return <PeranEdukasiPB />;
       case "tugas-akhir-lingkungan":
         return <TugasAkhirPB />;
+      
+      // Digital Ready
+      case "digital-ready":
+        return <DigitalReadyContentDR />;
       case "literasi-digital":
         return <LiterasiDigitalContentDR />;
       case "penggunaan-teknologi":
@@ -67,15 +74,15 @@ const MainLayout = () => {
         return "Dashboard";
       case "go-up-mart":
         return "Go Up Mart";
-      case "pengenalan-kebersihan":
-        return "Pengenalan Kebersihan Lingkungan";
+      case "kebersihan-lingkungan":
+        return "Kebersihan Lingkungan";
       case "pengelolaan-sampah":
         return "Pengelolaan Sampah yang Benar";
       case "dampak-polusi":
         return "Dampak Polusi dan Cara Menguranginya";
       case "peran-edukasi":
         return "Peran Edukasi dalam Meningkatkan Kesadaran Lingkungan";
-      case "tugas-akhir-peduli":
+      case "tugas-akhir-lingkungan":
         return "Tugas Akhir - Aksi Nyata untuk Lingkungan Bersih";
       case "literasi-digital":
         return "Literasi Digital";
@@ -101,27 +108,29 @@ const MainLayout = () => {
   const profilePhoto = "/assets/images/profil.png";
 
   return (
-    <div style={{ display: "flex", height: "100vh", overflow: "hidden" }}>
-      {/* Sidebar */}
-      <div style={{ width: "412px", flexShrink: 0 }}>
-        <Sidebar onSelectMenu={setSelectedMenu} />
-      </div>
+    <Box sx={{ display: "flex", height: "100vh", overflow: "hidden" }}>
+      <CssBaseline />
+      {/* Sidebar for Desktop */}
+      <Box>
+        <Sidebar selectedMenu={selectedMenu} onSelectMenu={setSelectedMenu} isOpen={isSidebarOpen} toggleSidebar={() => setIsSidebarOpen(!isSidebarOpen)} />
+      </Box>
 
       {/* Main Content */}
-      <div
-        style={{
+      <Box
+        component="main"
+        sx={{
           flexGrow: 1,
-          overflowY: "auto",
+          bgcolor: "#EDEDED",
           padding: "20px",
-          backgroundColor: "#EDEDED",
+          overflowY: "auto",
+          transition: "margin-left 0.3s", // Add a smooth transition
+          marginLeft: { xs: 0, sm: "412px" }, // Adjust margin for mobile view
         }}
       >
-        {/* Navbar with userName and profilePhoto */}
         <Navbar title={getTitle()} userName={userName} profilePhoto={profilePhoto} />
-
         {renderContent()}
-      </div>
-    </div>
+      </Box>
+    </Box>
   );
 };
 

@@ -1,12 +1,16 @@
 "use client";
 import React, { useEffect, useState } from "react";
-import { Card, CardContent, CardMedia, Typography, Grid, Box } from "@mui/material";
+import { Card, CardContent, CardMedia, Typography, Grid, Box, useMediaQuery, useTheme } from "@mui/material";
 import { useRouter } from "next/navigation"; // Ensure this is the correct import for Next.js routing
 
 const GoUpMart = () => {
   const [items, setItems] = useState([]);
   const [isMounted, setIsMounted] = useState(false);
-  const router = useRouter(); // Move `useRouter` outside of the conditional
+  const router = useRouter();
+
+  // Get the theme and media query for responsiveness
+  const theme = useTheme();
+  const isMobile = useMediaQuery(theme.breakpoints.down("sm"));
 
   // Ensures the component is mounted before rendering content
   useEffect(() => {
@@ -39,10 +43,10 @@ const GoUpMart = () => {
       <Grid container spacing={2} justifyContent="center" className="mb-5">
         <Grid item xs={12} sm={6} md={6}>
           <Box className="rounded-lg shadow-md p-5 text-center bg-white w-full">
-            <Typography variant="h6" className="text-gray-600">
+            <Typography variant={isMobile ? "subtitle1" : "h6"} className="text-gray-600">
               Point Saya
             </Typography>
-            <Typography variant="h3" className="text-[#629A1A] font-bold">
+            <Typography variant={isMobile ? "h4" : "h3"} className="text-[#629A1A] font-bold">
               2500
             </Typography>
             <Typography variant="body2" className="text-gray-500">
@@ -52,10 +56,10 @@ const GoUpMart = () => {
         </Grid>
         <Grid item xs={12} sm={6} md={6}>
           <Box className="rounded-lg shadow-md p-5 text-center bg-white w-full">
-            <Typography variant="h6" className="text-gray-600">
+            <Typography variant={isMobile ? "subtitle1" : "h6"} className="text-gray-600">
               Voucher Saya
             </Typography>
-            <Typography variant="h3" className="text-[#629A1A] font-bold">
+            <Typography variant={isMobile ? "h4" : "h3"} className="text-[#629A1A] font-bold">
               2
             </Typography>
             <Typography variant="body2" className="text-gray-500">
@@ -65,18 +69,20 @@ const GoUpMart = () => {
         </Grid>
       </Grid>
 
-      {/* Item List Section - 3 items per row */}
-      <Grid container spacing={3}>
+      {/* Item List Section - Responsive cards */}
+      <Grid container spacing={2}>
         {items.map((item) => (
-          <Grid item xs={12} sm={6} md={4} key={item.id}>
+          <Grid item xs={6} sm={6} md={4} key={item.id}>
+            {" "}
+            {/* 2 cards per row on mobile */}
             <Card
-              onClick={() => handleCardClick(item.id)} // Make the card clickable
-              className="rounded-lg shadow-md cursor-pointer" // Add cursor-pointer for visual feedback
+              onClick={() => handleCardClick(item.id)}
+              className="rounded-lg shadow-md cursor-pointer"
               style={{
                 height: "100%",
                 borderRadius: "12px",
                 overflow: "hidden",
-                padding: "16px",
+                padding: isMobile ? "8px" : "16px", // Reduced padding for mobile
                 display: "flex",
                 flexDirection: "column",
                 justifyContent: "space-between",
@@ -87,10 +93,10 @@ const GoUpMart = () => {
                 image={item.imageUrl}
                 alt={item.title}
                 style={{
-                  height: "239px",
+                  height: isMobile ? "120px" : "239px", // Responsive height for mobile
                   objectFit: "cover",
                   borderRadius: "8px",
-                  marginBottom: "10px",
+                  marginBottom: isMobile ? "5px" : "10px", // Adjust margin for mobile
                 }}
               />
               <CardContent
@@ -102,19 +108,27 @@ const GoUpMart = () => {
                   alignItems: "center",
                 }}
               >
-                <Typography variant="h6" className="font-bold mb-1" style={{ fontWeight: 600 }}>
+                <Typography
+                  variant={isMobile ? "subtitle2" : "h6"}
+                  className="font-bold mb-1"
+                  style={{ fontWeight: 600, fontSize: isMobile ? "14px" : "16px" }} // Responsive font size for title
+                >
                   {item.title}
                 </Typography>
-                <Typography variant="body2" className="text-gray-600 mb-3" style={{ fontSize: "14px" }}>
+                <Typography
+                  variant=""
+                  className="text-gray-600 mb-1"
+                  style={{ fontSize: isMobile ? "12px" : "14px" }} // Responsive font size for description
+                >
                   {item.description}
                 </Typography>
                 <Typography
-                  variant="h5"
+                  variant={isMobile ? "subtitle1" : "h5"}
                   className="text-[#629A1A] font-bold"
                   style={{
                     marginTop: "auto",
                     fontWeight: 700,
-                    fontSize: "18px",
+                    fontSize: isMobile ? "14px" : "18px", // Responsive font size for price
                   }}
                 >
                   {item.price}
