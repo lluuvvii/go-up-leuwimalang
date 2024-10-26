@@ -1,3 +1,4 @@
+import { Stack, Typography } from "@mui/material";
 import { useEffect, useState } from "react";
 
 export default function DigitalReady() {
@@ -38,11 +39,11 @@ export default function DigitalReady() {
   return (
     <div>
       {course ? (
-        <div>
-          <h1>{course.title}</h1>
-          <p>{course.description}</p>
+        <Stack direction='column' gap={1}>
+          <Typography variant="h6" sx={{ color: "black" }}>{course.title}</Typography>
+          <Typography variant="body1" sx={{ color: "grey" }}>{course.description}</Typography>
           <img src={course.image} alt={course.title} />
-        </div>
+        </Stack>
       ) : (
         <p>Course not found</p> // Tampilkan jika kursus "Digital Ready" tidak ditemukan
       )}
