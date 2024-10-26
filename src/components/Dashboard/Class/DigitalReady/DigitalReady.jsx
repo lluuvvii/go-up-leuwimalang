@@ -8,7 +8,7 @@ export default function DigitalReady() {
   useEffect(() => {
     const fetchCourse = async () => {
       try {
-        const response = await fetch("http://localhost:3000/api/courses"); // Panggil API
+        const response = await fetch("/api/courses"); // Panggil API
         if (!response.ok) {
           throw new Error("Failed to fetch course data");
         }
