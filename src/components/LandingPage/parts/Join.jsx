@@ -5,7 +5,7 @@ import Image from "next/image";
 const JoinUs = () => {
   return (
     <section className="bg-gray-100">
-      <div className="max-w-screen-xl mx-auto py-20 px-8"> {/* Menambahkan padding horizontal */}
+      <div className="max-w-screen-xl mx-auto py-20 px-8" id="program"> {/* Menambahkan padding horizontal */}
         <div className="text-center mb-12">
           <Slide direction="up" triggerOnce>
             <h2 className="text-2xl md:text-[42px] font-bold text-[#629A1A] leading-snug md:leading-tight">
