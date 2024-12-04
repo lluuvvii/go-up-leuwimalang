@@ -38,7 +38,7 @@ const GoUpMart = () => {
   };
 
   return (
-    <Box>
+    <Box sx={{ backgroundColor: 'white' }}>
       {/* Point and Voucher Section */}
       <Grid container spacing={2} justifyContent="center" className="mb-5">
         <Grid item xs={12} sm={6} md={6}>
