@@ -23,10 +23,14 @@ const Navbar = () => {
   const handleScroll = (id) => {
     const section = document.getElementById(id);
     if (section) {
-      section.scrollIntoView({ behavior: "smooth" });
+      section.scrollIntoView({ behavior: "smooth" }); // Smooth scrolling
       setActiveLink(id);
     }
     setIsDrawerOpen(false);
+  };
+
+  const handleLogoClick = () => {
+    window.scrollTo({ top: 0, behavior: "smooth" }); // Smooth scroll to top when logo is clicked
   };
 
   const toggleDrawer = () => {
@@ -36,26 +40,58 @@ const Navbar = () => {
   return (
     <nav className="bg-white shadow sticky top-0 z-50 w-full">
       <div className="max-w-screen-xl mx-auto py-4 px-4 md:px-10 flex items-center justify-between">
-        {" "}
-        {/* Menambahkan padding horizontal */}
         {/* Icon Hamburger for mobile mode */}
         <div className="md:hidden">
           <IconButton onClick={toggleDrawer}>
             <MenuIcon />
           </IconButton>
         </div>
-        {/* Logo - Hidden in mobile view */}
+        {/* Logo as a Button, Hidden in mobile view */}
         <div className="hidden md:block">
-          <Image src="/assets/images/logo-navbar.png" alt="Logo" width={57} height={57} className="rounded-full" />
+          <button onClick={handleLogoClick} className="focus:outline-none">
+            <Image src="/assets/images/logo-navbar.png" alt="Logo" width={57} height={57} className="rounded-full" />
+          </button>
         </div>
         {/* Link Menu for desktop */}
         <div className="hidden md:flex space-x-8">
           {["beranda", "program", "tentang"].map((id) => (
-            <a key={id} onClick={() => handleScroll(id)} className={`cursor-pointer relative group ${activeLink === id ? "text-[#629A1A]" : "text-gray-600"}`}>
+            <a
+              key={id}
+              onClick={() => handleScroll(id)}
+              className={`cursor-pointer relative group ${activeLink === id ? "text-[#629A1A]" : "text-gray-600"}`}
+            >
               {id.charAt(0).toUpperCase() + id.slice(1)}
-              <span className={`absolute left-0 bottom-0 w-0 h-[2px] bg-[#629A1A] transition-all duration-300 group-hover:w-full ${activeLink === id ? "w-full" : ""}`}></span>
+              <span
+                className={`absolute left-0 bottom-0 w-0 h-[2px] bg-[#629A1A] transition-all duration-300 group-hover:w-full ${
+                  activeLink === id ? "w-full" : ""
+                }`}
+              ></span>
             </a>
           ))}
+          {/* Forum Diskusi Button */}
+          <a
+            href="/forum-diskusi" // Tautan langsung ke halaman Forum Diskusi
+            className={`cursor-pointer relative group ${activeLink === "Forum Diskusi" ? "text-[#629A1A]" : "text-gray-600"}`}
+          >
+            Forum Diskusi
+            <span
+              className={`absolute left-0 bottom-0 w-0 h-[2px] bg-[#629A1A] transition-all duration-300 group-hover:w-full ${
+                activeLink === "Forum Diskusi" ? "w-full" : ""
+              }`}
+            ></span>
+          </a>
+          {/* Tukar Poin Button */}
+          <a
+            href="/go-up-mart"
+            className={`cursor-pointer relative group ${activeLink === "Tukar Poin" ? "text-[#629A1A]" : "text-gray-600"}`}
+          >
+            Tukar Poin
+            <span
+              className={`absolute left-0 bottom-0 w-0 h-[2px] bg-[#629A1A] transition-all duration-300 group-hover:w-full ${
+                activeLink === "Tukar Poin" ? "w-full" : ""
+              }`}
+            ></span>
+          </a>
         </div>
         {/* Login and Logout Button */}
         <div>
@@ -77,10 +113,12 @@ const Navbar = () => {
           <div className="flex flex-col p-4 space-y-4 w-64">
             {/* Logo in the drawer */}
             <div className="flex justify-center mb-4">
-              <Image src="/assets/images/logo-navbar.png" alt="Logo" width={57} height={57} className="rounded-full" />
+              <button onClick={handleLogoClick} className="focus:outline-none">
+                <Image src="/assets/images/logo-navbar.png" alt="Logo" width={57} height={57} className="rounded-full" />
+              </button>
             </div>
 
-            {["home", "program", "tentang"].map((id) => (
+            {["home", "program", "tentang", "Forum Diskusi", "Tukar Poin"].map((id) => (
               <a key={id} onClick={() => handleScroll(id)} className={`cursor-pointer ${activeLink === id ? "text-[#629A1A]" : "text-gray-600"}`}>
                 {id.charAt(0).toUpperCase() + id.slice(1)}
               </a>

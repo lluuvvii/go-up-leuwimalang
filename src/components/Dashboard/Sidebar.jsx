@@ -21,13 +21,12 @@ import {
   Home as HomeIcon,
   Dashboard as DashboardIcon,
   Store as StoreIcon,
-  Subscriptions as SubscriptionsIcon,
-  Info as InfoIcon,
   History as HistoryIcon,
   Star as StarIcon,
   Settings as SettingsIcon,
   Person as PersonIcon,
   Assignment as AssignmentIcon,
+  Chat as ChatIcon,
 } from "@mui/icons-material";
 
 const Sidebar = ({ onSelectMenu }) => {
@@ -132,13 +131,12 @@ const Sidebar = ({ onSelectMenu }) => {
 
       <Divider />
 
-      <List>
+      <List sx={{ fontFamily: "'Poppins', sans-serif" }}>
         <ListSubheader sx={{ fontSize: "16px", fontWeight: "bold", color: "#444", position: "relative" }}>Menu</ListSubheader>
         {renderMenuItem("home", "Home", HomeIcon)}
         {renderMenuItem("dashboard", "Dashboard", DashboardIcon)}
         {renderMenuItem("go-up-mart", "Go Up Mart", StoreIcon)}
-        {renderMenuItem("berlangganan", "Berlangganan", SubscriptionsIcon)}
-        {renderMenuItem("about-us", "About Us", InfoIcon)}
+        {renderMenuItem("diskusi", "Diskusi", ChatIcon)}
 
         <Divider sx={{ my: 2 }} />
 

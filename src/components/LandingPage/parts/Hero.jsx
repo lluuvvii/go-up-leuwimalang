@@ -2,29 +2,25 @@
 import { useRouter } from "next/navigation";
 import { Fade } from "react-awesome-reveal";
 import Image from "next/image";
-import { useSession, signIn } from "next-auth/react";
 
 const Hero = () => {
   const router = useRouter();
-  const { data: session } = useSession();
 
   const handleButtonClick = () => {
-    if (session?.user) {
-      router.push("/dashboard");
-    } else {
-      signIn(); // Arahkan user ke login jika belum login
-    }
+    router.push("/dashboard");
   };
 
   return (
     <section className="relative w-full h-screen bg-cover bg-center">
-      <div className="absolute inset-0 bg-cover bg-center" id="beranda" style={{ backgroundImage: "url(/assets/images/hero.jpg)" }}>
-        <div className="absolute inset-0 bg-black opacity-20"></div>
+      {/* Gambar Hero dengan overlay gradien */}
+      <div className="absolute inset-0 bg-cover bg-center" id="beranda" style={{ backgroundImage: "url(/assets/images/hero.png)" }}>
+        <div
+          className="absolute inset-0 bg-gradient-to-r from-black via-black/50 to-transparent opacity-90"
+        ></div>
       </div>
 
       {/* Konten dengan padding */}
       <div className="max-w-screen-xl mx-auto h-full flex flex-col-reverse md:flex-row items-center justify-between p-10">
-        
         {/* Left Side: Text Content */}
         <Fade direction="left" triggerOnce>
           <div className="text-center md:text-left text-white max-w-md mt-6 md:mt-0">
@@ -35,7 +31,10 @@ const Hero = () => {
             <p className="mt-4 text-sm md:text-xl leading-relaxed md:leading-relaxed">
               Bergabunglah dengan kami dan wujudkan <br className="hidden md:block" /> perubahan nyata di desa Anda!
             </p>
-            <button className="px-4 py-2 md:px-5 md:py-3 mt-4 text-white bg-[#629A1A] rounded-lg transition duration-300 hover:bg-[#5a7d2e] text-sm md:text-base" onClick={handleButtonClick}>
+            <button
+              className="px-4 py-2 md:px-5 md:py-3 mt-4 text-white bg-[#629A1A] rounded-lg transition duration-300 hover:bg-[#5a7d2e] text-sm md:text-base"
+              onClick={handleButtonClick}
+            >
               Belajar Sekarang
             </button>
           </div>
@@ -44,7 +43,13 @@ const Hero = () => {
         {/* Right Side: Image */}
         <Fade direction="right" triggerOnce>
           <div className="flex-shrink-0 mb-6 md:mb-0 mx-auto md:mx-0">
-            <Image src="/assets/images/logo-hero.png" alt="Logo Go Up Leuwimalang" width={250} height={250} className="md:w-[457px] md:h-[457px]" />
+            <Image
+              src="/assets/images/logo-hero.png"
+              alt="Logo Go Up Leuwimalang"
+              width={250}
+              height={250}
+              className="md:w-[457px] md:h-[457px]"
+            />
           </div>
         </Fade>
       </div>
