@@ -17,14 +17,11 @@ const Testimonials = () => {
           {/* Testimonial 1 */}
           <Fade direction="up" triggerOnce>
             <div className="bg-[#629A1A] rounded-xl p-8 text-white text-center h-full flex flex-col">
-              <div className="mb-6">
-                <Image src="/assets/images/person1.jpg" alt="Budi" width={120} height={120} className="rounded-full mx-auto" />
-              </div>
               <h3 className="text-2xl font-semibold">Budi</h3>
               <p className="text-lg">Warga Leuwimalang</p>
               <div className="mt-6 relative flex-grow">
                 <Image src="/assets/icons/ic-quote.svg" alt="Quote Start" width={17} height={12} className="absolute -top-4 left-0" />
-                <p className="text-sm md:text-2xl leading-relaxed font-semibold">Dengan mengikuti kursus literasi digital, saya jadi lebih percaya diri menggunakan internet untuk kebutuhan sehari-hari.</p>
+                <p className="text-sm md:text-2xl leading-relaxed font-semibold">Kalau proyek ini benar-benar bisa berjalan, saya berharap banyak warga, termasuk saya, akan merasa lebih percaya diri menggunakan internet untuk kebutuhan sehari-hari. Apalagi sekarang semuanya serba online, jadi kemampuan seperti ini pasti berguna banget.</p>
                 <Image src="/assets/icons/ic-quote.svg" alt="Quote End" width={17} height={12} className="absolute -bottom-4 right-0 rotate-180" />
               </div>
             </div>
@@ -33,14 +30,11 @@ const Testimonials = () => {
           {/* Testimonial 2 */}
           <Fade direction="up" triggerOnce>
             <div className="bg-[#629A1A] rounded-xl p-8 text-white text-center h-full flex flex-col">
-              <div className="mb-6">
-                <Image src="/assets/images/person2.jpg" alt="Rahma" width={120} height={120} className="rounded-full mx-auto" />
-              </div>
               <h3 className="text-2xl font-semibold">Rahma</h3>
               <p className="text-lg">Warga Leuwimalang</p>
               <div className="mt-6 relative flex-grow">
                 <Image src="/assets/icons/ic-quote.svg" alt="Quote Start" width={17} height={12} className="absolute -top-4 left-0" />
-                <p className="text-sm md:text-2xl leading-relaxed font-semibold">Kursus ini sangat membantu saya memahami teknologi dan mengaplikasikannya dalam kehidupan sehari-hari.</p>
+                <p className="text-sm md:text-2xl leading-relaxed font-semibold">Jika kursus ini benar-benar terwujud, saya berharap dapat membantu saya memahami teknologi dengan lebih baik dan mengaplikasikannya dalam kehidupan sehari-hari. Ini pasti akan sangat bermanfaat untuk aktivitas sehari-hari yang semakin terhubung dengan teknologi.</p>
                 <Image src="/assets/icons/ic-quote.svg" alt="Quote End" width={17} height={12} className="absolute -bottom-4 right-0 rotate-180" />
               </div>
             </div>
@@ -49,14 +43,11 @@ const Testimonials = () => {
           {/* Testimonial 3 */}
           <Fade direction="up" triggerOnce>
             <div className="bg-[#629A1A] rounded-xl p-8 text-white text-center h-full flex flex-col">
-              <div className="mb-6">
-                <Image src="/assets/images/person3.jpg" alt="Abdul" width={120} height={120} className="rounded-full mx-auto" />
-              </div>
               <h3 className="text-2xl font-semibold">Abdul</h3>
               <p className="text-lg">Warga Leuwimalang</p>
               <div className="mt-6 relative flex-grow">
                 <Image src="/assets/icons/ic-quote.svg" alt="Quote Start" width={17} height={12} className="absolute -top-4 left-0" />
-                <p className="text-sm md:text-2xl leading-relaxed font-semibold">Saya sangat bersyukur ada program ini. Sekarang saya bisa memanfaatkan internet dengan lebih baik.</p>
+                <p className="text-sm md:text-2xl leading-relaxed font-semibold">Saya berharap program ini benar-benar bisa terwujud, karena pasti akan sangat membantu saya dan warga lainnya untuk memanfaatkan internet dan penjualan UMKM di desa ini jadi lebih baik di kehidupan sehari-hari.</p>
                 <Image src="/assets/icons/ic-quote.svg" alt="Quote End" width={17} height={12} className="absolute -bottom-4 right-0 rotate-180" />
               </div>
             </div>

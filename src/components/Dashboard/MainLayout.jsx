@@ -75,29 +75,25 @@ const MainLayout = () => {
       case "go-up-mart":
         return "Go Up Mart";
       case "kebersihan-lingkungan":
-        return "Kebersihan Lingkungan";
+        return "Peduli Bersih: Langkah Kecil untuk Lingkungan Sehat";
       case "pengelolaan-sampah":
-        return "Pengelolaan Sampah yang Benar";
+        return "Peduli Bersih: Langkah Kecil untuk Lingkungan Sehat";
       case "dampak-polusi":
-        return "Dampak Polusi dan Cara Menguranginya";
+        return "Peduli Bersih: Langkah Kecil untuk Lingkungan Sehat";
       case "peran-edukasi":
-        return "Peran Edukasi dalam Meningkatkan Kesadaran Lingkungan";
+        return "Peduli Bersih: Langkah Kecil untuk Lingkungan Sehat";
       case "tugas-akhir-lingkungan":
         return "Tugas Akhir - Aksi Nyata untuk Lingkungan Bersih";
       case "literasi-digital":
-        return "Literasi Digital";
+        return "Digital Ready: Menghadapi Tantangan Dunia Online";
       case "penggunaan-teknologi":
-        return "Penggunaan Teknologi Secara Efektif";
+        return "Digital Ready: Menghadapi Tantangan Dunia Online";
       case "keamanan-privasi":
-        return "Keamanan dan Privasi di Dunia Digital";
+        return "Digital Ready: Menghadapi Tantangan Dunia Online";
       case "pemikiran-kritis":
-        return "Pemikiran Kritis dalam Mengakses Informasi Daring";
+        return "Digital Ready: Menghadapi Tantangan Dunia Online";
       case "tugas-akhir-digital":
         return "Tugas Akhir - Penerapan Literasi Digital";
-      case "berlangganan":
-        return "Konten Premium";
-      case "about-us":
-        return "Tentang Kami";
       default:
         return "Dashboard Pelajar";
     }
