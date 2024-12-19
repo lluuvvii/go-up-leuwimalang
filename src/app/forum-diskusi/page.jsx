@@ -2,16 +2,20 @@
 
 import {
   AppBar, Toolbar, Typography, Drawer, List, ListItem, ListItemText,
-  Box, Container, Card, CardContent, TextField, Button
+  Box, Container, Card, CardContent, TextField, Button, Avatar, Divider, Badge
 } from '@mui/material';
+import ForumIcon from '@mui/icons-material/Forum';
+import HomeIcon from '@mui/icons-material/Home';
+import PersonIcon from '@mui/icons-material/Person';
 
 export default function ForumPage() {
   return (
     <Box sx={{ backgroundColor: 'white', boxShadow: 'none' }}>
       {/* Header */}
-      <AppBar position="sticky" sx={{ backgroundColor: 'white' }}>
+      <AppBar position="sticky" sx={{ backgroundColor: '#629A1A', boxShadow: 3 }}>
         <Toolbar>
-          <Typography variant="h6" component="div" sx={{ flexGrow: 1, color: '#FFFFFF' }}>
+          <ForumIcon sx={{ color: 'white', mr: 2, fontSize: '2rem' }} />
+          <Typography variant="h6" component="div" sx={{ flexGrow: 1, color: 'white', fontWeight: 'bold' }}>
             Forum Diskusi
           </Typography>
         </Toolbar>
@@ -25,40 +29,62 @@ export default function ForumPage() {
           sx={{
             width: 240,
             flexShrink: 0,
-            [`& .MuiDrawer-paper`]: { width: 240, boxSizing: 'border-box', backgroundColor: '#629A1A', color: '#FFFFFF' },
+            [`& .MuiDrawer-paper`]: {
+              width: 240,
+              boxSizing: 'border-box',
+              backgroundColor: '#4E7C2A',
+              color: '#FFFFFF',
+              borderRight: '1px solid #ddd',
+            },
           }}
         >
           <Box sx={{ overflow: 'auto' }}>
             <List>
               <ListItem button>
-                <ListItemText primary="Home" sx={{ color: '#FFFFFF' }} />
+                <HomeIcon sx={{ color: 'white', mr: 2, fontSize: '1.5rem' }} />
+                <ListItemText primary="Home" sx={{ color: '#FFFFFF', fontWeight: 'bold' }} />
               </ListItem>
               <ListItem button>
-                <ListItemText primary="Diskusi" sx={{ color: '#FFFFFF' }} />
+                <ForumIcon sx={{ color: 'white', mr: 2, fontSize: '1.5rem' }} />
+                <ListItemText primary="Diskusi" sx={{ color: '#FFFFFF', fontWeight: 'bold' }} />
               </ListItem>
               <ListItem button>
-                <ListItemText primary="Profil" sx={{ color: '#FFFFFF' }} />
+                <PersonIcon sx={{ color: 'white', mr: 2, fontSize: '1.5rem' }} />
+                <ListItemText primary="Profil" sx={{ color: '#FFFFFF', fontWeight: 'bold' }} />
               </ListItem>
             </List>
           </Box>
         </Drawer>
 
         {/* Main Content */}
-        <Container component="main" sx={{ flexGrow: 1, minHeight: '100vh', padding: '16px' }}>
-          <Typography variant="h4" gutterBottom sx={{ color: '#629A1A' }}>
+        <Container component="main" sx={{ flexGrow: 1, minHeight: '100vh', padding: '32px', backgroundColor: '#f9f9f9' }}>
+          <Typography variant="h4" gutterBottom sx={{ color: '#629A1A', fontWeight: 'bold' }}>
             Forum Diskusi
           </Typography>
-          <Card sx={{ mb: 3, boxShadow: 2 }}>
+
+          {/* Discussion Card */}
+          <Card sx={{ mb: 3, boxShadow: 6, borderRadius: 2 }}>
             <CardContent>
-              <Typography variant="h6" sx={{ color: '#629A1A' }}>
-                Judul Diskusi
+              <Box display="flex" alignItems="center" mb={2}>
+                <Avatar alt="User" src="/static/images/avatar/1.jpg" sx={{ mr: 2 }} />
+                <Typography variant="h6" sx={{ color: '#629A1A', fontWeight: 'bold', fontSize: '1.2rem' }}>
+                  Judul Diskusi
+                </Typography>
+              </Box>
+              <Typography variant="body2" color="text.secondary" sx={{ lineHeight: 1.6 }}>
+                Deskripsi atau topik diskusi ini membahas berbagai ide menarik dan kreatif.
               </Typography>
-              <Typography variant="body2" color="text.secondary">
-                Deskripsi atau topik diskusi.
-              </Typography>
+              <Divider sx={{ my: 2 }} />
+              <Badge badgeContent={3} color="success">
+                <Typography variant="body2" sx={{ color: '#629A1A', cursor: 'pointer', fontWeight: 'bold' }}>
+                  Lihat semua komentar
+                </Typography>
+              </Badge>
             </CardContent>
           </Card>
-          <Typography variant="h6" gutterBottom sx={{ color: '#629A1A' }}>
+
+          {/* Add Comment Section */}
+          <Typography variant="h6" gutterBottom sx={{ color: '#629A1A', fontWeight: 'bold' }}>
             Tambahkan Komentar
           </Typography>
           <TextField
@@ -67,9 +93,25 @@ export default function ForumPage() {
             rows={4}
             variant="outlined"
             placeholder="Tulis komentar Anda di sini..."
-            sx={{ mb: 2, '& .MuiOutlinedInput-root': { '& fieldset': { borderColor: '#629A1A' } } }}
+            sx={{
+              mb: 3,
+              '& .MuiOutlinedInput-root': {
+                '& fieldset': { borderColor: '#629A1A' },
+              },
+            }}
           />
-          <Button variant="contained" sx={{ backgroundColor: '#629A1A', '&:hover': { backgroundColor: '#507715' } }}>
+          <Button
+            variant="contained"
+            sx={{
+              backgroundColor: '#629A1A',
+              '&:hover': { backgroundColor: '#507715' },
+              boxShadow: 3,
+              px: 5,
+              py: 1.5,
+              borderRadius: 20,
+              fontSize: '1rem',
+            }}
+          >
             Kirim
           </Button>
         </Container>
@@ -81,12 +123,14 @@ export default function ForumPage() {
         sx={{
           py: 2,
           textAlign: 'center',
-          backgroundColor: '#629A1A',
+          backgroundColor: '#4E7C2A',
           color: '#FFFFFF',
           marginTop: 'auto',
         }}
       >
-        <Typography variant="body2">© 2024 Forum Diskusi. All rights reserved.</Typography>
+        <Typography variant="body2" sx={{ fontSize: '0.9rem' }}>
+          © 2024 Forum Diskusi. All rights reserved.
+        </Typography>
       </Box>
     </Box>
   );

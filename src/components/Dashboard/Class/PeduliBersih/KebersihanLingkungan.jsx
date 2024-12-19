@@ -1,13 +1,5 @@
 import React, { useEffect, useState } from "react";
-import {
-  Card,
-  CardContent,
-  Typography,
-  Button,
-  CardMedia,
-  Box,
-} from "@mui/material";
-import PlayCircleOutlineIcon from "@mui/icons-material/PlayCircleOutline";
+import { Card, CardContent, Typography, Button, Box } from "@mui/material";
 
 const Dashboard = () => {
   const [classRecommendations, setClassRecommendations] = useState([]);
@@ -32,36 +24,33 @@ const Dashboard = () => {
           backgroundColor: "#FFFFFF",
         }}
       >
-        <CardMedia
-          component="div"
+        {/* Embedded YouTube Video */}
+        <Box
           sx={{
             position: "relative",
-            paddingTop: "56.25%", // Aspect ratio 16:9
-            backgroundImage: "url('/assets/images/video.png')", // Ganti dengan path gambar Anda
-            backgroundSize: "cover",
-            backgroundPosition: "center",
+            overflow: "hidden",
+            paddingTop: "56.25%", // 16:9 Aspect Ratio
           }}
         >
-          <PlayCircleOutlineIcon
-            sx={{
+          <iframe
+            src="https://www.youtube.com/embed/DFkS9EehQDw?si=NWYSXBqCQQU-N_r9"
+            title="YouTube video player"
+            frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            referrerpolicy="strict-origin-when-cross-origin"
+            allowfullscreen
+            style={{
               position: "absolute",
-              top: "50%",
-              left: "50%",
-              transform: "translate(-50%, -50%)",
-              fontSize: "64px",
-              color: "#FFFFFF",
-              backgroundColor: "rgba(0, 0, 0, 0.5)",
-              borderRadius: "50%",
-              padding: "10px",
+              top: 0,
+              left: 0,
+              width: "100%",
+              height: "100%",
             }}
-          />
-        </CardMedia>
+          ></iframe>
+        </Box>
         <CardContent sx={{ textAlign: "center", padding: "20px" }}>
-          <Typography
-            variant="h5"
-            sx={{ fontWeight: "bold", color: "#000000", marginBottom: "10px" }}
-          >
-            Pengenalan Literasi Digital
+          <Typography variant="h5" sx={{ fontWeight: "bold", color: "#000000", marginBottom: "10px" }}>
+            Pentingnya Menjaga Kebersihan Lingkungan
           </Typography>
           <Typography
             variant="body1"
@@ -71,11 +60,8 @@ const Dashboard = () => {
               lineHeight: 1.6,
             }}
           >
-            Video ini membahas dasar literasi digital, meliputi definisi, manfaat,
-            dan keterampilan yang diperlukan untuk memahami, mengakses, dan mengevaluasi
-            informasi digital secara aman dan bertanggung jawab. Video ini juga
-            memberikan panduan penting tentang bagaimana berperilaku bijak di dunia
-            digital.
+            Deskripsi: Modul ini akan memperkenalkan pentingnya menjaga kebersihan lingkungan sebagai bagian dari tanggung jawab individu dan komunitas. Peserta akan belajar tentang dampak lingkungan kotor terhadap kesehatan dan
+            kesejahteraan masyarakat.
           </Typography>
           <Box sx={{ textAlign: "center" }}>
             <Button
