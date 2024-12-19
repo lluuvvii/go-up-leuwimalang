@@ -6,6 +6,8 @@ import DashboardContent from "./Menu/Dashboard";
 import GoUpMartContent from "./Menu/GoUpMart";
 import PremiumContent from "./Menu/Premium";
 import AboutUsContent from "./Menu/About";
+import ProfilContent from "./Menu/Profil";
+import SettingContent from "./Menu/Setting";
 
 // Mengimpor konten dari Peduli Bersih
 import PengenalanKebersihanPB from "./Class/PeduliBersih/KebersihanLingkungan";
@@ -63,6 +65,10 @@ const MainLayout = () => {
         return <PremiumContent />;
       case "about-us":
         return <AboutUsContent />;
+      case "profil":
+        return <ProfilContent />;
+      case "settings":
+        return <SettingContent />;
       default:
         return <DashboardContent />;
     }
